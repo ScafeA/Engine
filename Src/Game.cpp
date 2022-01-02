@@ -20,8 +20,8 @@ const int LEVEL_WIDTH = 2400;
 const int LEVEL_HEIGHT = 1900;
 
 //Screen dimension constants
-const int SCREEN_WIDTH = 1920;
-const int SCREEN_HEIGHT = 1080;
+const int SCREEN_WIDTH = 1280;
+const int SCREEN_HEIGHT = 720;
 
 SDL_Rect Game::camera = { 0,0,SCREEN_WIDTH,SCREEN_HEIGHT };
 
@@ -57,7 +57,7 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 		}
 
 		isRunning = true;
-	} 
+	}
 
 	if (TTF_Init() == -1)
 	{
@@ -75,13 +75,13 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 
 	map->LoadMap("assets/map.map", 25, 20);
 
-	player.addComponent<TransformComponent>(4);
+	player.addComponent<TransformComponent>(4, LEVEL_WIDTH / 2, LEVEL_HEIGHT / 2);
 	player.addComponent<SpriteComponent>("player", true);
 	player.addComponent<KeyboardController>();
 	player.addComponent<ColliderComponent>("player");
 	player.addGroup(groupPlayers);
 
-	white = {255,255,255,255};
+	white = { 255,255,255,255 };
 	label.addComponent<UILabel>(10, 10, "TestString", "arial", white);
 
 	//assets->CreateProjectile(Vector2D(600, 600), Vector2D(2, 0), 200, 2, "projectile");
@@ -95,14 +95,14 @@ auto& projectiles(manager.getGroup(Game::groupProjectiles));
 void Game::handleEvents()
 {
 	SDL_PollEvent(&event);
-	switch (event.type) 
+	switch (event.type)
 	{
-		case SDL_QUIT:
-			isRunning = false;
-			break;
+	case SDL_QUIT:
+		isRunning = false;
+		break;
 
-		default:
-			break;
+	default:
+		break;
 	}
 }
 

@@ -18,6 +18,37 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Src\AssetManager.h" />
+    <ClInclude Include="Src\Collision.h" />
+    <ClInclude Include="Src\ECS\Animation.h" />
+    <ClInclude Include="Src\ECS\ColliderComponent.h" />
+    <ClInclude Include="Src\ECS\Components.h" />
+    <ClInclude Include="Src\ECS\ECS.h" />
+    <ClInclude Include="Src\ECS\KeyboardController.h" />
+    <ClInclude Include="Src\ECS\ProjectileComponent.h" />
+    <ClInclude Include="Src\ECS\SpriteComponent.h" />
+    <ClInclude Include="Src\ECS\TileComponent.h" />
+    <ClInclude Include="Src\ECS\TransformComponent.h" />
+    <ClInclude Include="Src\ECS\UILabel.h" />
+    <ClInclude Include="Src\Game.h" />
+    <ClInclude Include="Src\GameObject.h" />
+    <ClInclude Include="Src\KeyboardController.h" />
+    <ClInclude Include="Src\Map.h" />
+    <ClInclude Include="Src\TextureManager.h" />
+    <ClInclude Include="Src\Vector2D.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Src\AssetManager.cpp" />
+    <ClCompile Include="Src\Collision.cpp" />
+    <ClCompile Include="Src\ECS\ECS.cpp" />
+    <ClCompile Include="Src\Game.cpp" />
+    <ClCompile Include="Src\GameObject.cpp" />
+    <ClCompile Include="Src\main.cpp" />
+    <ClCompile Include="Src\Map.cpp" />
+    <ClCompile Include="Src\TextureManager.cpp" />
+    <ClCompile Include="Src\Vector2D.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>

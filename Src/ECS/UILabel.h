@@ -17,7 +17,6 @@ public:
 	{
 		position.x = xpos;
 		position.y = ypos;
-
 	}
 
 	~UILabel()

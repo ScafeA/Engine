@@ -18,9 +18,8 @@ int main(int argc, char* argv[])
 	std::string version = "0.0.1";
 	std::string title = "ScafeEngine " + version;
 
-
 	game = new Game();
-	game->init(title.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 1920, 1080, false);
+	game->init(title.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 1280, 720, false);
 
 	while (game->running()) 
 	{
