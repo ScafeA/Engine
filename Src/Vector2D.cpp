@@ -2,8 +2,8 @@
 
 Vector2D::Vector2D()
 {
-	x = 0.0f;
-	y = 0.0f;
+	x = 0;
+	y = 0;
 }
 
 Vector2D::Vector2D(int x, int y)

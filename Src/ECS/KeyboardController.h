@@ -24,20 +24,20 @@ public:
 			{
 			case SDLK_w:
 				transform->velocity.y = -1;
-				sprite->Play("Walk");
+				sprite->Play("Walk_up");
 				break;
 			case SDLK_a:
 				transform->velocity.x = -1;
-				sprite->Play("Walk");
-				sprite->spriteFlip = SDL_FLIP_HORIZONTAL;
+				sprite->Play("Walk_x");
 				break;
 			case SDLK_d:
 				transform->velocity.x = 1;
-				sprite->Play("Walk");
+				sprite->Play("Walk_x");
+				sprite->spriteFlip = SDL_FLIP_HORIZONTAL;
 				break;
 			case SDLK_s:
 				transform->velocity.y = 1;
-				sprite->Play("Walk");
+				sprite->Play("Walk_down");
 				break;
 			case SDLK_SPACE:
 				Game::assets->CreateProjectile(Vector2D(600, 600), Vector2D(2, 0), 200, 2, "projectile");
@@ -58,11 +58,11 @@ public:
 			case SDLK_a:
 				transform->velocity.x = 0;
 				sprite->Play("Idle");
-				sprite->spriteFlip = SDL_FLIP_NONE;
 				break;
 			case SDLK_d:
 				transform->velocity.x = 0;
 				sprite->Play("Idle");
+				sprite->spriteFlip = SDL_FLIP_NONE;
 				break;
 			case SDLK_s:
 				transform->velocity.y = 0;

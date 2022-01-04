@@ -64,18 +64,18 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 		std::cout << "Error : SDL_TTF" << std::endl;
 	}
 
-	assets->AddTexture("terrain", "assets/terrain_ss.png");
-	assets->AddTexture("player", "assets/player_anims.png");
+	assets->AddTexture("terrain", "assets/NewMap2.png");
+	assets->AddTexture("player", "assets/player_anims_new.png");
 	assets->AddTexture("projectile", "assets/proj.png");
 
 	assets->AddFont("arial", "assets/arial.ttf", 16);
 
-	map = new Map("terrain", 3, 32);
+	map = new Map("terrain", 3, 16);
 	//ecs implementation
 
-	map->LoadMap("assets/map.map", 25, 20);
+	map->LoadMap("assets/NewMap2.txt", 50, 40);
 
-	player.addComponent<TransformComponent>(4, LEVEL_WIDTH / 2, LEVEL_HEIGHT / 2);
+	player.addComponent<TransformComponent>(2, LEVEL_WIDTH / 2, LEVEL_HEIGHT / 2);
 	player.addComponent<SpriteComponent>("player", true);
 	player.addComponent<KeyboardController>();
 	player.addComponent<ColliderComponent>("player");
@@ -151,8 +151,10 @@ void Game::update()
 	if (camera.y > 20 * 96 - camera.h)
 		camera.y = 20 * 96 - camera.h;*/
 
-	camera.x = (player.getComponent<TransformComponent>().position.x + player.getComponent<TransformComponent>().width / 2) - SCREEN_WIDTH / 2;
-	camera.y = (player.getComponent<TransformComponent>().position.y + player.getComponent<TransformComponent>().height / 2) - SCREEN_HEIGHT / 2;
+	// TODO: Change +50 Because map starts at - 100 - 100 
+	camera.x = (player.getComponent<TransformComponent>().position.x + player.getComponent<TransformComponent>().width / 2) - SCREEN_WIDTH / 2 + 50;
+	camera.y = (player.getComponent<TransformComponent>().position.y + player.getComponent<TransformComponent>().height / 2) - SCREEN_HEIGHT / 2 + 50;
+
 
 	//Keep the camera in bounds
 	if (camera.x < 0)
